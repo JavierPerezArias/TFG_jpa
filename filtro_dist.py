@@ -31,7 +31,7 @@ from sklearn.model_selection import cross_validate
 from pyspark.sql import SparkSession
 
 # instantiate spark session
-spark = SparkSession.builder.master("local").appName("Test").getOrCreate()
+spark = SparkSession.builder.master("local[5]").appName("Test").getOrCreate()
 sc = spark.sparkContext
 
 from joblibspark import register_spark
